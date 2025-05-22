@@ -65,7 +65,14 @@ php spark serve
 
 > Akses di `http://localhost:8080`
 
----
+### ➕ Endpoint Resource
+
+`GET` `POST` `PUT` `Delete`
+
+
+>Mahasiswa : http://localhost:8080/mahasiswa<br>
+>Dosen : http://localhost:8080/dosen
+
 
 ## 🌐 2. Buat Frontend dari Awal (Laravel 10)
 
