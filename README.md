@@ -50,9 +50,7 @@ database.default.password =
 
 1. Buat database baru: jadwal_sidang
 
-2. Import file .sql yang disediakan (jika ada di repo)
-
-3. Atau tambahkan tabel dosen secara manual:
+2. Atau tambahkan tabel dosen secara manual:
 
 ```
 CREATE TABLE `dosen` (
@@ -69,6 +67,21 @@ INSERT INTO `dosen` (`nidn`, `nama_dosen`, `program_studi`, `email`) VALUES
 ('1001001003', 'Bambang Wijaya', 'D4 Rekayasa Keamanan Siber', 'bambang.wijaya@gmail.com'),
 ('1001001004', 'Siti Nurhaliza', 'D4 Rekayasa Perangkat Lunak', 'siti.nurhaliza@gmail.com'),
 ('1001001005', 'Santika Dewi', 'D4 Rekayasa Keamanan Siber', 'santika.dewi@gmail.com');
+```
+3. tambahkan table mahasiswa secara manual
+```
+CREATE TABLE `mahasiswa` (
+  `npm` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nama_mahasiswa` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `program_studi` enum('D3 Teknik Elektronika','D3 Teknik Listrik','D3 Teknik Informatika','D3 Teknik Mesin','D4 Teknik Pengendalian Pencemaran Lingkungan','D4 Pengembangan Produk Agroindustri','D4 Teknologi Rekayasa Energi Terbarukan','D4 Rekayasa Kimia Industri','D4 Teknologi Rekayasa Mekatronika','D4 Rekayasa Keamanan Siber','D4 Teknologi Rekayasa Multimedia','D4 Akuntansi Lembaga Keuangan Syariah','D4 Rekayasa Perangkat Lunak') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `judul_skripsi` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+
+INSERT INTO `mahasiswa` (`npm`, `nama_mahasiswa`, `program_studi`, `judul_skripsi`, `email`) VALUES
+('230102063', 'Dimas Pratama', 'D3 Teknik Elektronika', 'Pengembangan Sistem Pendingin Otomatis Berbasis IoT pada Mesin CNC', 'dimas.pratama@gmail.com'),
+('230102064', 'Aulia Zahra', 'D4 Akuntansi Lembaga Keuangan Syariah', 'Analisis Implementasi IoT dalam Efisiensi Konsumsi Daya Listrik pada Lembaga Keuangan Syariah', 'aulia.zahra@gmail.com'),
+('230102065', 'Nadia Putri', 'D4 Rekayasa Keamanan Siber', 'Analisis Keamanan Jaringan Menggunakan Intrusion Detection System (IDS)', 'nadia.putri@gmail.com');
 ```
 ### 📦 Install Dependency
 
